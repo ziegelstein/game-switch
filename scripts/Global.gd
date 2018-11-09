@@ -2,12 +2,36 @@ extends Node
 
 # This is the Global Node, it is the Interface to all Game modules.
 
+#### GLOBAL VARS ####
+var global_interface = preload("res://scripts/Global_Interface.gd").new()
+
+
+
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
+	generate_interns()
+	generate_modules()
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func generate_interns():
+	"""Generates all Game Elements"""
+	self.add_child(global_interace)
+	pass
+	
+func generate_modules():
+	"""Generate all modules"""
+	
+	pass
+
+func give_interface(interface):
+	"""This functions takes generated interfaces-objects from the modules, it stores and manage them in the Global_Interface Subscript"""
+	if global_interface.exist():
+		return global_interface.add_interface(interface)
+	else: return false
+	
+	
+func use_interface(command, module):
+	if global_interface.exist():
+		return global_interface.execute_command(command, module)
+	else: return false
+	
+	
