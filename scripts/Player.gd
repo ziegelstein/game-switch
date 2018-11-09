@@ -3,10 +3,13 @@ extends Node
 #### GLOBAL VARS ####
 var player_values = {}
 var magazin = 8
+var player_sprite = Sprite.new()
 
 func _ready():
 	"""Is called on creation of the player node"""
 	set_player_values
+	add_child(player_sprite)
+	player_sprite.draw_texture_rect(Texture.new(), Rect2(10, 10, 10, 10), true, Color(1, 1, 1, 1), false, null)
 	pass
 
 func _process(delta):
@@ -19,11 +22,12 @@ func set_player_values():
 	player_values["base_speed"] = 1
 	player_values["speed_modifier"] = 1
 	# Health and Defence
-	player_values["health"] = 100
-	player_values["defense"] = 1
+	player_values["base_health"] = 100
+	player_values["current_health"] = player_values["base_health"]
+	player_values["base_defense"] = 1
 	player_values["defense_modifier"] = 1
 	# Attack Values
-	player_values["damage"] = 10
+	player_values["base_damage"] = 10
 	player_values["damage_modifier"] = 1
 	player_values["attack_speed"] = 1
 	player_values["magazine_size"] = 8
@@ -32,11 +36,23 @@ func set_player_values():
 	pass
 
 func reduce_health(damage):
-	if (player_values["health"] - 100) < 0:
+	"""Hurts the Player for the given damage"""
+	if (player_values["current_health"] - 100) < 0:
 		find_node("Global").game_over()
-	else: player_values["health"] = player_values["health"] - 100
+	else: player_values["current_health"] -= (damage-(player_values["base_defense"] * player_values["defense_modifier"]))
+
+func heal(heal_value):
+	"""Heals the player for the given amount"""
+	player_values["current_health"] += heal_value
+
+func full_heal(heal_value):
+	"""Heals the player to the base_health"""
+	player_values["current_health"] = player_values["base_health"]
 
 func change_value(key, value):
+	"""Changes an Value"""
+	if key == "current_health":
+		reduce_health(value)
 	pass
 
 func shoot():
@@ -56,3 +72,7 @@ func reload():
 	# create timer
 	# when timer is done:
 	magazin = player_values["magazine_size"]
+
+func get_position():
+	"""Returns the texture of the sprite, contains the size and the position of the player"""
+	return sprite.texture
