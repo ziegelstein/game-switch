@@ -3,10 +3,13 @@ extends Node
 #### GLOBAL VARS ####
 var player_values = {}
 var magazin = 8
+var player_sprite = Sprite.new()
 
 func _ready():
 	"""Is called on creation of the player node"""
 	set_player_values
+	add_child(player_sprite)
+	player_sprite.draw_texture_rect(Texture.new(), Rect2(10, 10, 10, 10), true, Color(1, 1, 1, 1), false, null)
 	pass
 
 func _process(delta):
@@ -69,3 +72,7 @@ func reload():
 	# create timer
 	# when timer is done:
 	magazin = player_values["magazine_size"]
+
+func get_position():
+	"""Returns the texture of the sprite, contains the size and the position of the player"""
+	return sprite.texture
