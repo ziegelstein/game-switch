@@ -33,10 +33,10 @@ func set_player_values():
 	pass
 
 func reduce_health(damage):
-	"""Hurts the Player fpr the given damage"""
+	"""Hurts the Player for the given damage"""
 	if (player_values["current_health"] - 100) < 0:
 		find_node("Global").game_over()
-	else: player_values["current_health"] = player_values["current_health"] - 100
+	else: player_values["current_health"] -= (damage-(player_values["base_defense"] * player_values["defense_modifier"]))
 
 func heal(heal_value):
 	"""Heals the player for the given amount"""
