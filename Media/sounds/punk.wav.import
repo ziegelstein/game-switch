@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/punk.wav-03b4b7d15b1213ee3327a6b54e8ad68a.sample"
+
+[deps]
+
+source_file="res://Media/sounds/punk.wav"
+dest_files=[ "res://.import/punk.wav-03b4b7d15b1213ee3327a6b54e8ad68a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
