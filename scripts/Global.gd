@@ -14,7 +14,7 @@ func _ready():
 
 func generate_interns():
 	"""Generates all Game Elements"""
-	self.add_child(global_interace)
+	self.add_child(global_interface)
 	pass
 	
 func generate_modules():

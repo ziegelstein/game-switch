@@ -11,7 +11,11 @@ config_version=3
 [application]
 
 config/name="Game Switch"
+<<<<<<< HEAD
 run/main_scene="res://scenes/Debug.tscn"
+=======
+run/main_scene="res://scenes/Global.tscn"
+>>>>>>> 0df218f54162c12e350e20aef009fd3a1a8e4698
 config/icon="res://icon.png"
 
 [autoload]
