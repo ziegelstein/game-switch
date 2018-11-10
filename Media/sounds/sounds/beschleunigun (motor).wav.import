@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/beschleunigun (motor).wav-2a4c7b18adc46da9ed3eb07e1c35bf58.sample"
+
+[deps]
+
+source_file="res://Media/sounds/sounds/beschleunigun (motor).wav"
+dest_files=[ "res://.import/beschleunigun (motor).wav-2a4c7b18adc46da9ed3eb07e1c35bf58.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

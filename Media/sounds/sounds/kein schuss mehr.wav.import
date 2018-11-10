@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/kein schuss mehr.wav-e5092331c508bfbf3dbf3f361d64edac.sample"
+
+[deps]
+
+source_file="res://Media/sounds/sounds/kein schuss mehr.wav"
+dest_files=[ "res://.import/kein schuss mehr.wav-e5092331c508bfbf3dbf3f361d64edac.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
