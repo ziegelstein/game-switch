@@ -12,6 +12,7 @@ config_version=3
 
 config/name="Game Switch"
 run/main_scene="res://scenes/Global.tscn"
+boot_splash/image="res://Media/sprites/gihubmännchen.png"
 config/icon="res://icon.png"
 
 [autoload]
@@ -20,6 +21,10 @@ Global="*res://scenes/Global.tscn"
 logger="*res://scripts/logger.gd"
 Debug="*res://scripts/Debug.gd"
 Audio_Manager="*res://scripts/Audio_Manager.gd"
+
+[layer_names]
+
+3d_physics/test=""
 
 [rendering]
 

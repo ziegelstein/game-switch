@@ -46,7 +46,7 @@ func stop_sound(key):
 		logger.error("Couldn't stop sound "+key+", not registered")
 
 func debug():
-	Audio_Manager.register_Sound("res://Media/sounds/no_sh.wav", 'no_sh')
+	Audio_Manager.register_sound("res://Media/sounds/no_sh.wav", 'no_sh')
 #	Audio_Manager.playSound('no_sh')
 #	#Audio_Manager.unregisterSound('no_sh')
 #	#Audio_Manager.playSound('no_sh')
