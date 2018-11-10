@@ -4,6 +4,7 @@ extends Node
 var player_values = {}
 var magazin = 8
 var player_sprite = Sprite.new()
+var motion = Vector2()
 var sound_registry = init_registry("res://Media/sounds/player_sounds.csv")
 
 func _ready():
@@ -16,6 +17,24 @@ func _ready():
 
 func _process(delta):
 	check_collision()
+	if Input.is_action_pressed("d"):
+		motion.x=round(base_speed*speed_modifier)
+		move_and_collide(motion)
+		$AnimatedSprite.play()
+	elif Input.is_action_pressed("a"):
+		motion.x=-round(base_speed*speed_modifier)
+		move_and_collide(motion)
+		$AnimatedSprite.play()
+	elif Input.is_action_pressed("s"):
+		motion.y=round(base_speed*speed_modifier)
+		move_and_collide(motion)
+		$AnimatedSprite.play()
+	elif Input.is_action_pressed("w"):
+		motion.y=-round(base_speed*speed_modifier)
+		move_and_collide(motion)
+		$AnimatedSprite.play()
+	else:
+		$AnimatedSprite.stop()      
 	pass
 
 func set_player_values():
