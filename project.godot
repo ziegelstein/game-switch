@@ -11,15 +11,15 @@ config_version=3
 [application]
 
 config/name="Game Switch"
-
-run/main_scene="res://scenes/Debug.tscn"
+run/main_scene="res://scenes/Global.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Audio_Manager="*res://scripts/Audio_Manager.gd"
+Global="*res://scenes/Global.tscn"
 logger="*res://scripts/logger.gd"
-
+Debug="*res://scripts/Debug.gd"
+Audio_Manager="*res://scripts/Audio_Manager.gd"
 
 [rendering]
 

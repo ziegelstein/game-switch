@@ -4,10 +4,12 @@ extends Node
 var player_values = {}
 var magazin = 8
 var player_sprite = Sprite.new()
+var sound_registry = init_registry("res://Media/sounds/player_sounds.csv")
 
 func _ready():
 	"""Is called on creation of the player node"""
 	set_player_values
+	register_sounds(sound_registry)
 	add_child(player_sprite)
 	player_sprite.draw_texture_rect(Texture.new(), Rect2(10, 10, 10, 10), true, Color(1, 1, 1, 1), false, null)
 	pass
@@ -35,11 +37,18 @@ func set_player_values():
 	player_values["bullet_speed"] = 1
 	pass
 
+func register_sounds(sound_registry):
+	for sound in sound_registry:
+		Audio_Manager
+	pass
+
 func reduce_health(damage):
 	"""Hurts the Player for the given damage"""
 	if (player_values["current_health"] - 100) < 0:
 		find_node("Global").game_over()
-	else: player_values["current_health"] -= (damage-(player_values["base_defense"] * player_values["defense_modifier"]))
+	else: 
+		player_values["current_health"] -= (damage-(player_values["base_defense"] * player_values["defense_modifier"]))
+		Audio_Manager.play_sound("player_hurt")
 
 func heal(heal_value):
 	"""Heals the player for the given amount"""
@@ -63,6 +72,7 @@ func shoot():
 		### TODO Add Timer for Attack Speed
 		bullet.on_create(player_values["speed"], get_viewport().get_mouse_position(), player_values["damage"], player_values["size"])
 		magazin -= 1
+		Audio_Manager.play_sound("shoot_bullet")
 	else:
 		# Play anoying "Gun is empty sound
 		print("Magazin Leer!")
@@ -76,3 +86,16 @@ func reload():
 func get_position():
 	"""Returns the texture of the sprite, contains the size and the position of the player"""
 	return sprite.texture
+	
+func init_registry(path):
+	var file = File.new()
+	file.open(path, file.READ)
+	var line
+	var return_val = {}
+	while !file.eof_reached():
+		line = file.get_csv_line(",")
+		if(line.size()==2):
+			return_val[(line[1])] = line[0]
+		else:
+			logger.error(("Error - in Line " + str(line) + " of " + path))
+	return return_val
