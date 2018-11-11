@@ -1,0 +1,121 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Media/sprites/tilesets.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Tileset" type="Node"]
+
+[node name="water" type="Sprite" parent="." index="0"]
+
+position = Vector2( 292.043, 78.5255 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="door" type="Sprite" parent="." index="1"]
+
+position = Vector2( 231.458, 75.6576 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 23, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="acid" type="Sprite" parent="." index="2"]
+
+position = Vector2( 275.194, 38.375 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 46, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="wodden_floor" type="Sprite" parent="." index="3"]
+
+position = Vector2( 363.023, 49.1296 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 69, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="stone_floor" type="Sprite" parent="." index="4"]
+
+position = Vector2( 187.006, 107.921 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 92, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="mob_spawner" type="Sprite" parent="." index="5"]
+
+position = Vector2( 175.893, 41.9599 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 115, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="wall" type="Sprite" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 360.872, 99.6761 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 138, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="lava" type="Sprite" parent="." index="7"]
+
+position = Vector2( 77.4267, 73.2581 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 161, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="stairs" type="Sprite" parent="." index="8"]
+
+position = Vector2( 145.646, 85.1415 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="carpet_floor" type="Sprite" parent="." index="9"]
+
+position = Vector2( 317.296, 44.6498 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 207, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="deep_water" type="Sprite" parent="." index="10"]
+
+position = Vector2( 36.935, 39.8084 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 230, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="loot" type="Sprite" parent="." index="11"]
+
+position = Vector2( 90.9319, 105.412 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 253, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="background" type="Sprite" parent="." index="12"]
+
+position = Vector2( 122.614, 26.5696 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 276, 0, 23, 25 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+
